@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 public class TestController {
     @PostMapping("/validate")
     public void validate(@Valid @RequestBody TestRequest request) {
-        // no-op
     }
 
     @GetMapping("/not-found")

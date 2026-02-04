@@ -77,7 +77,7 @@ public class GlobalExceptionHandler {
                 null
         );
 
-        return ResponseEntity.status(HttpStatus.CONFLICT)  // ← change here
+        return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(error);
     }
 

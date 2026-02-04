@@ -24,4 +24,9 @@ public class TestController {
         public String getName() { return name; }
         public void setName(String name) { this.name = name; }
     }
+
+    @GetMapping("/business-error")
+    public void businessError() {
+        throw new com.bank.app.exception.BusinessRuleException("Test business rule violation");
+    }
 }

@@ -69,7 +69,7 @@ public class GlobalExceptionHandler {
             HttpServletRequest request
     ) {
         ApiError error = new ApiError(
-                HttpStatus.BAD_REQUEST.value(),
+                HttpStatus.CONFLICT.value(),
                 "BUSINESS_RULE_VIOLATION",
                 ex.getMessage(),
                 request.getRequestURI(),
@@ -77,7 +77,8 @@ public class GlobalExceptionHandler {
                 null
         );
 
-        return ResponseEntity.badRequest().body(error);
+        return ResponseEntity.status(HttpStatus.CONFLICT)  // ← change here
+                .body(error);
     }
 
     @ExceptionHandler(Exception.class)

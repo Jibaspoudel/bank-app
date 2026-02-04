@@ -17,3 +17,4 @@ public class OpenApiConfig {
                         .description("Bank Application REST APIs"));
     }
 }
+//test coverage;
